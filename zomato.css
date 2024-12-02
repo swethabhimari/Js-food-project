@@ -1,0 +1,279 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(70, 65, 65);
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: orangered;
+    color: white;
+    padding: 25px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+  
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: black;
+    text-decoration: underline;
+}
+.searchbox {
+    border: 1px solid #ccc;
+    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 25px;
+    background-color: white;
+    width: 300px;
+    display: flex; align-items: center; justify-content: center;
+}
+.searchbox input{
+width: 250px;
+border: 0;
+outline: 0;
+background: transparent;
+
+}
+.srbtn{
+    position: relative;
+    bottom: 35px;
+}
+.srbtn:hover{
+    color: white;
+    transform: scale(1.2,1.2);
+}
+#pastaimages{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#pastaimages>div{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+#pastaimages>div>img:hover{
+border-radius: 50%;
+transform: scale(1.3,1.3);
+}
+#pastaimages>div>button:hover{
+    border-radius: 5rem;
+    transform: scale(1.3,1.3);
+    }
+#pizzaimages{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#pizzaimages>div{
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+}
+#pizzaimages>div>img:hover{
+    border-radius: 50%;
+    transform: scale(1.5,1.5);
+    }
+    #pizzaimages>div>button:hover{
+        border-radius: 5rem;
+        transform: scale(1.3,1.3);
+        }
+        #burgerimages{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        #burgerimages>div{
+            border: 1px solid white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #burgerimages>div>img:hover{
+            border-radius: 50%;
+            transform: scale(1.5,1.5);
+            }
+            #burgerimages>div>button:hover{
+                border-radius: 5rem;
+                transform: scale(1.3,1.3);
+                }
+                #dessertimages{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+                #dessertimages>div{
+                    border: 1px solid white;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+                #dessertimages>div>img:hover{
+                    border-radius: 50%;
+                    transform: scale(1.5,1.5);
+                    }
+                    #dessertimages>div>button:hover{
+                        border-radius: 5rem;
+                        transform: scale(1.3,1.3);
+                        }
+                        #drinkimages{
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                        }
+                        #drinkimages>div{
+                            border: 1px solid white;
+                            padding: 10px;
+                            border-radius: 5px;
+                        }
+                        #drinkimages>div>img:hover{
+                            border-radius: 50%;
+                            transform: scale(1.5,1.5);
+                            }
+                            #drinkimages>div>button:hover{
+                                border-radius: 5rem;
+                                transform: scale(1.3,1.3);
+                                }
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color:orangered;
+        border: 1px solid #444;
+        width: 200px;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #333;
+        width: 200px;
+        padding: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+/* Section styles */
+main section {
+    padding: 2rem;
+    text-align: center;
+}
+
+#artistContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding-top: 2rem;
+}
+/* Hide navigation links on smaller screens */
+/* Hide navigation links on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background-color: gray;
+        border-radius: 5px;
+        padding: 3px;
+        gap: 20px;
+    }
+
+      .nav-links.active {
+        display: flex; /* Show nav links when active */
+         width: 80px;
+        gap: 0px;
+        color: red;
+        position: absolute;
+        top: 50px;
+    } 
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0; /* Hide middle line*/
+    } 
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+} 
