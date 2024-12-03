@@ -92,10 +92,7 @@ background: transparent;
     border-radius: 5px;
    
 }
-#pastaimages>div>img:hover{
-border-radius: 50%;
-transform: scale(1.3,1.3);
-}
+
 #pastaimages>div>button:hover{
     border-radius: 5rem;
     transform: scale(1.3,1.3);
@@ -110,10 +107,7 @@ transform: scale(1.3,1.3);
     padding: 10px;
     border-radius: 5px;
 }
-#pizzaimages>div>img:hover{
-    border-radius: 50%;
-    transform: scale(1.5,1.5);
-    }
+
     #pizzaimages>div>button:hover{
         border-radius: 5rem;
         transform: scale(1.3,1.3);
@@ -128,10 +122,7 @@ transform: scale(1.3,1.3);
             padding: 10px;
             border-radius: 5px;
         }
-        #burgerimages>div>img:hover{
-            border-radius: 50%;
-            transform: scale(1.5,1.5);
-            }
+        
             #burgerimages>div>button:hover{
                 border-radius: 5rem;
                 transform: scale(1.3,1.3);
@@ -146,10 +137,7 @@ transform: scale(1.3,1.3);
                     padding: 10px;
                     border-radius: 5px;
                 }
-                #dessertimages>div>img:hover{
-                    border-radius: 50%;
-                    transform: scale(1.5,1.5);
-                    }
+                
                     #dessertimages>div>button:hover{
                         border-radius: 5rem;
                         transform: scale(1.3,1.3);
@@ -164,10 +152,7 @@ transform: scale(1.3,1.3);
                             padding: 10px;
                             border-radius: 5px;
                         }
-                        #drinkimages>div>img:hover{
-                            border-radius: 50%;
-                            transform: scale(1.5,1.5);
-                            }
+                        
                             #drinkimages>div>button:hover{
                                 border-radius: 5rem;
                                 transform: scale(1.3,1.3);
