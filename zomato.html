@@ -29,7 +29,7 @@
         </marquee>
     </header>
            
-    
+   <a href="cart.html" style="color: white;float: right;font-size: 20px;">cart</a>
     <main>
         <section id="home">
             <div style="position: relative;">
@@ -37,14 +37,18 @@
                     
            
             
-            <div class="bgimg">
-                <center><div class="searchbox ">
+            <!-- <div class="bgimg">
+                <center><div id="searchbox " class="searchbox ">
                     <input type="text" placeholder="search for items here.....">
                     <img src="https://static.vecteezy.com/system/resources/previews/001/504/972/non_2x/search-icon-free-vector.jpg"width="20px" height="20px"></center>
                 </div>
-                <button class="srbtn" onclick="getitems()" style="background-color:orangered;height: 30px;border-radius: 5px;margin-left: 380px;margin-bottom: 10px;border: 2px solid whitesmoke;"> search </button>
-            </div> <br><br><br>
-            
+                <button class="srbtn"  style="background-color:orangered;height: 30px;border-radius: 5px;margin-left: 380px;margin-bottom: 10px;border: 2px solid whitesmoke;" onclick="searchItems()"> search </button>
+            </div> <br><br><br> -->
+            <center><div class="searchbox">
+                <input type="text" id="searchInput" placeholder="Search for items here.....">
+                <img src="https://static.vecteezy.com/system/resources/previews/001/504/972/non_2x/search-icon-free-vector.jpg" width="20px" height="20px" onclick="searchItems()">
+            </div>
+            </center>
             
             <a href="#dessertimages"><button style="background-color:  rgb(70, 65, 65);font-size: 20px;border-radius: 10px;color: white; border: 10px solid  rgb(70, 65, 65);",><marquee direction="up" behavior="slide"><img src="https://img.freepik.com/premium-vector/bakery-dessert-logo-design-concept-vector-art-illustration_761413-39837.jpg?w=360" width="80px" height="80px"></marquee><br>Desserts</button></a>
                 <a href="#pastaimages">
@@ -62,79 +66,79 @@
                 <div id="container1"></div>
             </div>
         </section>
-        <section>
+        <section >
             <ins style="color: whitesmoke;font-size: 30px;float: left;">Desserts</ins><br><br><br>
             <div id="dessertimages">
-               <div>
+               <div class="item" id="item1">
                 <img src="https://chopnotch.com/wp-content/uploads/2020/11/Panna-Cotta-1.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Strawberry panna cotta</p><br>
                 <b style="color: white;">Prize:150</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button  class="buy-now" data-item="Strawberry Panna Cotta" data-price="150" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button   class="add-to-cart" data-item="Strawberry Panna Cotta" data-price="150" style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
                </div>
-               <div>
+               <div class="item" id="item2">
                 <img src="https://saltandbaker.com/wp-content/uploads/2020/09/Oreo-Layer-Dessert-2.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Oreo Dessert </p><br>
                 <b style="color: white;">Prize:200 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Oreo Dessert" data-price="200" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Oreo Dessert" data-price="200" style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item3">
                 <img src="https://www.foodandwine.com/thmb/rHA0d1aIMTwcxoRrTlqehLgzLUE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/HD-fw200609_trufflecake-1f285ff1b07944d7ae5ceee94211bd9d.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Chocolate Dessert</p>
                 <b style="color: white;" >Prize:150 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Chocolate Dessert" data-price="150" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Chocolate Dessert" data-price="150"style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item4">
                 <img src="https://www.tasteofhome.com/wp-content/uploads/2019/05/Fried-Ice-Cream-Dessert-Bars-_EXPS_SDJJ19_232652_B02_06_1b_rms-2.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Fries Ice-cream Dessert</p>
                 <b style="color: white;">Prize:220 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Fries Ice-cream Dessert" data-price="220"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  class="add-to-cart" data-item="Fries Ice-cream Dessert" data-price="220" style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item5">
                 <img src="https://images.squarespace-cdn.com/content/v1/5f3e4349fc4de33b1586a0c2/d448da87-ec6e-4ab9-a349-5558c83e0f2b/IMG_3393.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Chocolate and Berries Dessert</p>
                 <b style="color: white;" >Prize:270</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Chocolate and Berries Dessert" data-price="270"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Chocolate and Berries Dessert" data-price="270"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item6">
                 <img src="https://1.bp.blogspot.com/-0XtE0a-MFqo/T2-avwAvlPI/AAAAAAAAC5I/Xl8tPCD02vc/s1600/Banana+caramel+cream+mini+dessert.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Banana Cramel Cream Dessert</p>
                 <b style="color: white;">Prize:230</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Banana Cramel Cream Dessert" data-price="230"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  class="add-to-cart" data-item="Banana Cramel Cream Dessert" data-price="230" style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item7">
                 <img src="https://cleobuttera.com/wp-content/uploads/2018/08/jello-main-threes-720x720.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Creamy Yogut Jelle</p>
                 <b style="color: white;">Prize:280</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Creamy Yogut Jelle" data-price="280" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Creamy Yogut Jelle" data-price="280"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item8">
                 <img src="https://www.simplystacie.net/wp-content/uploads/2017/08/fruit-cocktail-dessert-1.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Fruit Dessert</p>
                 <b style="color: white;">Prize:200 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Fruit Dessert" data-price="200"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Fruit Dessert" data-price="200"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item9">
                 <img src="https://www.yayforfood.com/wp-content/uploads/fresh-berries-honey-lemon-mascarpone-cream-featured-720x720.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Berries with honey </p>
                 <b style="color: white;">Prize:380 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Berries with honey" data-price="380"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Berries with honey" data-price="380"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
 
-            <div>
+            <div class="item" id="item10">
                 <img src="https://dancearoundthekitchen.com/wp-content/uploads/2024/04/DSC_1435.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Cream Puff Dessert</p>
                 <b style="color: white;">Prize:150 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Cream Puff Dessert" data-price="150"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Cream Puff Dessert" data-price="150"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
                 
             </div>
@@ -143,76 +147,76 @@
             <ins style="color: whitesmoke;font-size: 30px;float: left;">Pasta</ins><br><br><br>
             <div id="pastaimages">
                 
-               <div>
+               <div class="item" id="item11">
                 <img src="https://www.vincenzosplate.com/wp-content/uploads/2021/08/610x350-Photo-4_862-How-to-Make-CHICKEN-PASTA-Like-an-Italian-V1.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Chicken Pasta</p><br>
                 <b style="color: white;">Prize:300 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Chicken Pasta" data-price="300"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Chicken Pasta" data-price="300"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
                </div>
-               <div>
+               <div class="item" id="item12" >
                 <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2023/05/red-sauce-pasta-recipe.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Red Sauce Pasta</p><br>
                 <b style="color: white;">Prize:100 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Red Sauce Pasta" data-price="100"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Red Sauce Pasta" data-price="100"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item13">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo-8-efyGKCbx0LO9V80U4kdjtZdARaC62_Q&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Penne Pasta</p>
                 <b style="color: white;" >Prize:150 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Penne Pasta" data-price="150"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Penne Pasta" data-price="150"style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item14">
                 <img src="https://cheeseknees.com/wp-content/uploads/2022/06/Cheese-Pasta-sq.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Cheese Pasta</p>
                 <b style="color: white;">Prize:120 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Cheese Pasta" data-price="120"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Cheese Pasta" data-price="120"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item15">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTolQiik3h7tTiVXzXdwlXE8TEL1VMarlU9EQ&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Pink Sauce Pasta</p>
                 <b style="color: white;" >Prize:120 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Pink Sauce Pasta" data-price="120" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Pink Sauce Pasta" data-price="120"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item16">
                 <img src="https://vismaifood.com/storage/app/uploads/public/7b2/49e/d12/thumb__1200_0_0_0_auto.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Desi Pasta</p>
                 <b style="color: white;">Prize:120 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Desi Pastaa" data-price="120"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Desi Pasta" data-price="120"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item17">
                 <img src="https://www.hiddenvalley.com/wp-content/uploads/2021/04/ranch-penne-pasta-wth-vegetables-RDP.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Penne Pasta with vegetables</p>
                 <b style="color: white;">Prize:140 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Penne Pasta with vegetables" data-price="140"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Penne Pasta with vegetables" data-price="140"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item18">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxRjAJWeFiD8IqGOsawJKaG9hpFvrctuEDA&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Masala Pasta</p>
                 <b style="color: white;">Prize:200 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Masala Pasta" data-price="200"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Masala Pasta" data-price="200"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item19">
                 <img src="https://cdn2.foodviva.com/static-content/food-images/snacks-recipes/tomato-pasta/tomato-pasta.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Tomato Pasta</p>
                 <b style="color: white;">Prize:180 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button  class="buy-now" data-item="Tomato Pasta" data-price="180"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Tomato Pasta" data-price="180"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
 
-            <div>
+            <div class="item" id="item20">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTty6vFfsuf5ymJ3E8KfYXoZzIDFrMcADqlNtNe8663u9_IIxx_ocH5jw2zyvBBsHSMHo0&usqp=CAU" alt="" width="300px" height="300px">
                 <p style="color: white;">Italian Pasta</p>
                 <b style="color: white;">Prize:150 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Italian Pasta" data-price="150"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Italian Pasta" data-price="150"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
                 
             </div>
@@ -220,76 +224,76 @@
         <section>
             <ins style="color: whitesmoke;font-size: 30px;float: left;">Pizza</ins><br><br><br>
             <div id="pizzaimages">
-               <div>
+               <div class="item" id="item21">
                 <img src="https://www.allrecipes.com/thmb/ee0daLeNNIUcrKbm5nxwFXheMDM=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-24878-bbq-chicken-pizza-beauty-4x3-39cd80585ad04941914dca4bd82eae3d.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;"> BBQ Chicken Pizza</p><br>
                 <b style="color: white;">Prize:550 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="BBQ Chicken Pizza" data-price="550"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="BBQ Chicken Pizza" data-price="550"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
                </div>
-               <div>
+               <div class="item" id="item22">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtwc5ofUxzM2eLBt0WNos6kAJnkqo3RTJvlQ&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Paneer Pizza</p><br>
                 <b style="color: white;">Prize:450 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Paneer Pizza" data-price="450" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Paneer Pizza" data-price="450"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item23">
                 <img src="https://www.thecookierookie.com/wp-content/uploads/2023/09/featured-mushroom-pizza-recipe.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Mushroom Pizza</p>
                 <b style="color: white;">Prize:350 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Mushroom Pizza" data-price="350" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  class="add-to-cart" data-item="Mushroom  Pizza" data-price="350"style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item24">
                 <img src="https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*" alt="" width="300px" height="300px">
                 <p style="color: white;">Cheese Pizza</p>
                 <b style="color: white;" >Prize:220 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Cheese Pizza" data-price="220"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Cheese Pizza" data-price="220"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item25">
                 <img src="https://img.freepik.com/free-photo/freshly-italian-pizza-with-mozzarella-cheese-slice-generative-ai_188544-12347.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Italian Pizza</p>
                 <b style="color: white;">Prize:250 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Italian Pizza" data-price="250"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Italian Pizza" data-price="250"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item26">
                 <img src="https://mljqj1thoqw7.i.optimole.com/cb:HcZD.141db/w:500/h:500/q:mauto/id:4e034c23612224ff94cd940fa066070a/https://cleancookingcaitlin.com/pineapple-pepper-vegan-pizza-square.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Pine Apple Pizza</p>
                 <b style="color: white;">Prize:420 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Pine Apple Pizza" data-price="420"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Pine Apple Pizza" data-price="420"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item27">
                 <img src="https://images.ctfassets.net/j8tkpy1gjhi5/5OvVmigx6VIUsyoKz1EHUs/b8173b7dcfbd6da341ce11bcebfa86ea/Salami-pizza-hero.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Red onion Pizza</p>
                 <b style="color: white;" >Prize:140 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Red onion Pizza" data-price="140"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Red onion Pizza" data-price="140"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item28">
                 <img src="https://thebigmansworld.com/wp-content/uploads/2021/07/keto-pizza-500x375.jpeg" alt="" width="300px" height="300px">
                 <p style="color: white;">Keto Pizza</p>
                 <b style="color: white;">Prize:200 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Keto Pizza" data-price="220"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Keto Pizza" data-price="220"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item29">
                 <img src="https://eu.gozney.com/cdn/shop/articles/Jhy_Coulter_Italian_Sausage_Pizza_-_Large_acc41d12-3e07-415d-a189-9abc360ee8eb.jpg?v=1668773024" alt="" width="300px" height="300px">
                 <p style="color: white;">Honey Pizza</p>
                 <b style="color: white;" >Prize:180 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Honey Pizza" data-price="180"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Honey Pizza" data-price="180"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
 
-            <div>
+            <div class="item" id="item30">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK1fhpOPIF0Oqrn9hsOp0ejob3g_AgfK7I0Q&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Veg Pizza</p>
                 <b style="color: white;" >Prize:150 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Veg Pizza" data-price="180" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Veg Pizza" data-price="180"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
                 
             </div>
@@ -297,47 +301,47 @@
         <section>
             <ins style="color: whitesmoke;font-size: 30px;float: left;">Burger</ins><br><br><br>
             <div id="burgerimages">
-               <div>
+               <div class="item" id="item31">
                 <img src="https://www.noracooks.com/wp-content/uploads/2023/04/veggie-burgers-1-2.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Veg Burger</p><br>
                 <b style="color: white;">Prize:300 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Veg Burger" data-price="300"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Veg Burger" data-price="300"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
                </div>
-               <div>
+               <div class="item" id="item32">
                 <img src="https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Cheese Burger</p><br>
                 <b style="color: white;">Prize:300 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Cheese Burger" data-price="300"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Cheese Burger" data-price="300"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item33">
                 <img src="https://www.chicken.ca/wp-content/uploads/2013/05/Moist-Chicken-Burgers.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Chicken Burger</p>
                 <b style="color: white;" >Prize:520 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Chicken Burger" data-price="520"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Chicken Burger" data-price="520"style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item34">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxfnRTekwgEd_iKoZSr9f1Dm-tRj_BIQ8HEA&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Fried Chicken Burger</p>
                 <b style="color: white;">Prize:620 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Fried Chicken Burger" data-price="520"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item=" Fried Chicken Burger" data-price="520"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item35">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR60ZVjQ4BDCPXNKG_oWtVg18qSUB4D7KIv5w&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Chicken Snadwitch Burger</p>
                 <b style="color: white;" >Prize:450 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Chicken Snadwitch Burger" data-price="450"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Chicken Snadwitch Burger" data-price="450"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item36">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScI0Rkrdn0yqJREN9A29haAEHsZYflirpQtF9WauLwCVcw3oZ4d6k-wFPbxq4VQwBevvk&usqp=CAU" alt="" width="300px" height="300px">
                 <p style="color: white;">Crispy Chicken Burger</p>
                 <b style="color: white;">Prize:600 per 500g</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Crispy Chicken Burger" data-price="600"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Crispy Chicken Burger" data-price="600"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
             
             </div>
@@ -345,47 +349,47 @@
         <section>
             <ins style="color: whitesmoke;font-size: 30px;float: left;">Drinks</ins><br><br><br>
             <div id="drinkimages">
-               <div>
+               <div class="item" id="item37">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXs7uhUc2MoBg-8v5eaGWN3db2q7ewsPmqTA&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Berry Bliss</p><br>
                 <b style="color: white;">Prize:300 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Berry Bliss" data-price="300"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Berry Bliss" data-price="300" style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
                </div>
-               <div>
+               <div class="item" id="item38">
                 <img src="https://www.asouthernsoul.com/wp-content/uploads/2021/05/tequila-sunrise-2-glasses-on-napkins.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Sunrise drink</p><br>
                 <b style="color: white;">Prize:300 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Sunrise drink" data-price="300"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Sunrise drink" data-price="300"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item39">
                 <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/411198743/ZT/KU/LJ/69752541/mango-flavour-energy-drink.jpg" alt="" width="300px" height="300px">
                 <p style="color: white;">Mango Flavour</p>
                 <b style="color: white;" >Prize:280 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Mango Flavour" data-price="280" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Mango Flavour" data-price="280"style="background-color:blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item40">
                 <img src="https://heybairtender.s3.amazonaws.com/recipes/mojito-pomegranate-bliss.png" alt="" width="300px" height="300px">
                 <p style="color: white;">Pomegranate Bliss</p>
                 <b style="color: white;">Prize:300</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Pomegranate Bliss" data-price="300" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Pomegranate Bliss" data-price="300"style="background-color: blue;color: whitesmoke;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item41">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR91bUWVGB7ii8CZCYEW7NMx3DuBvqqCDQd8A&s" alt="" width="300px" height="300px">
                 <p style="color: white;">Cucumber Chill</p>
                 <b style="color: white;" >Prize:340</b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Cucumber Chill" data-price="340" style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  class="add-to-cart" data-item="Cucumber Chill" data-price="340"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
-            <div>
+            <div class="item" id="item42">
                 <img src="https://farmm2home.com/wp-content/uploads/2021/10/ecc4b8c6-0a1d-475f-a3af-6e8f7cf487bf-scaled.jpeg" alt="" width="300px" height="300px">
                 <p style="color: white;">Hibiscus Honey Drink</p>
                 <b style="color: white;">Prize:600 </b><br>
-                <button style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
+                <button class="buy-now" data-item="Hibiscus Honey Drink" data-price="600"style="background-color: green;color: white;padding: 5px;border: 1px solid white;">Order now</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="add-to-cart" data-item="Hibiscus Honey Drink" data-price="600"style="background-color: blue;color: aliceblue;padding: 5px;">Add to cart</button>
             </div>
             
             </div>
@@ -395,14 +399,14 @@
             <h2>About Us</h2>
             <p>Welcome to food E-Commerce, where you can discover and shop for artwork from amazing artists worldwide.</p>
             <li><a href="#home">Home</a></li>
-        </section>
+        </section><br><br>
         <section id="contact" style="background-color: bisque;">
             <h2>Contact Us</h2>
             <p>Email: info@flaorofhome.com</p>
             <p>Phone: +123-456-7890</p>
-        </section>
+        </section><br><br>
     </main>
-    <footer>
+    <footer style="background-color: aliceblue;">
         <li><a href="#home">Home</a></li>
         <p>&copy; 2024 foodies heaven E-Commerce</p>
     </footer>
