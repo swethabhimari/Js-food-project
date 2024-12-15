@@ -1,9 +1,3 @@
-// const hamburger = document.getElementById('hamburger');
-//         const navLinks = document.getElementById('navLinks');
-
-//         hamburger.addEventListener('click', () => {
-//             navLinks.classList.toggle('active');
-//         });
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
@@ -11,21 +5,6 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active'); // Toggle hamburger animation
     navLinks.classList.toggle('active'); // Toggle nav-links visibility
 });
-// function searchItems() {
-//     let input = document.getElementById("searchbox").value.toLowerCase();
-//     let items = document.getElementsByClassName("item");
-
-//     // Loop through all items
-//     for (let i = 0; i < items.length; i++) {
-//         let itemName = items[i].getAttribute("data-name").toLowerCase();
-//         // If item name matches search input, show it, else hide it
-//         if (itemName.indexOf(input) > -1) {
-//             items[i].style.display = "";
-//         } else {
-//             items[i].style.display = "none";
-//         }
-//     }
-// }
 // Function to search items
 function searchItems() {
     // Get the search input
