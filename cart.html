@@ -1,395 +1,176 @@
-<!-- <!DOCTYPE html>
-             <html lang="en">
-             <head>
-                 <meta charset="UTF-8">
-                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                 <title>Shopping Cart</title>
-                 <style>
-                     body {
-                         font-family: Arial, sans-serif;
-                         margin: 20px;
-                     }
-                     h1 {
-                         text-align: center;
-                     }
-                     .cart-container {
-                         display: flex;
-                         flex-direction: column;
-                         gap: 20px;
-                     }
-                     .cart-item {
-                         display: flex;
-                         align-items: center;
-                         border: 1px solid #ccc;
-                         border-radius: 8px;
-                         padding: 10px;
-                         gap: 15px;
-                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                     }
-                     .cart-item img {
-                         width: 100px;
-                         height: 100px;
-                         object-fit: cover;
-                         border-radius: 8px;
-                     }
-                     .cart-details {
-                         flex: 1;
-                         display: flex;
-                         flex-direction: column;
-                     }
-                     .cart-details h3 {
-                         margin: 0;
-                     }
-                     .cart-details p {
-                         margin: 5px 0;
-                     }
-                     .actions {
-                         display: flex;
-                         gap: 10px;
-                         align-items: center;
-                     }
-                     .action-btn {
-                         padding: 5px 10px;
-                         cursor: pointer;
-                         border: none;
-                         color: white;
-                         border-radius: 4px;
-                     }
-                     .increment { background-color: green; }
-                     .decrement { background-color: orange; }
-                     .remove { background-color: red; }
-                     .total-container {
-                         margin-top: 20px;
-                         font-size: 18px;
-                         text-align: right;
-                     }
-                 </style>
-             </head>
-             <body>
-                 <h1>Your Cart</h1>
-                 <div class="cart-container" id="cart-items">
-                     <!-- Cart items will be displayed here -->
-                 <!-- </div>
-                 <div class="total-container">
-                     <strong  style="background-color: firebrick;width: 300px;height: 50px;padding: 10px 20px ;color: white;border-radius: 3px;">Total Amount: Rs. <span id="total-amount">0</span></strong>
-                 </div>
-             
-                 <script>
-                     // Retrieve cart data from localStorage
-                     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-             
-                     // Reference to the cart container and total amount element
-                     const cartItemsContainer = document.getElementById('cart-items');
-                     const totalAmountContainer = document.getElementById('total-amount');
-             
-                     // Calculate total amount
-                     function calculateTotal() {
-                         return cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
-                     }
-             
-                     // Render the cart items
-                     function renderCart() {
-                         cartItemsContainer.innerHTML = ''; // Clear current items
-                         cart.forEach((cartItem, index) => {
-                             const { item, price, quantity = 1, image = ' ' } = cartItem; // Default image
-                             const cartItemDiv = document.createElement('div');
-                             cartItemDiv.classList.add('cart-item');
-             
-                             cartItemDiv.innerHTML = `
-                                 <img src="${image}" alt="${item}">
-                                 <div class="cart-details">
-                                     <h3>${item}</h3>
-                                     <p>Price: Rs. ${price}</p>
-                                     <p>Quantity: ${quantity}</p>
-                                 </div>
-                                 <div class="actions">
-                                     <button class="action-btn increment" data-index="${index}">+</button>
-                                     <button class="action-btn decrement" data-index="${index}">-</button>
-                                     <button class="action-btn remove" data-index="${index}" style="padding:1px 10px 10px 10px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLzkeKPJFeiwWvAh71njC0avxSLnA7se2x_Q&s" style="width:18px;height:18px;margin-top:5px;">Remove</button>
-                                 </div>
-                             `;
-                             cartItemsContainer.appendChild(cartItemDiv);
-                         });
-             
-                         // Display message if cart is empty
-                         if (cart.length === 0) {
-                             cartItemsContainer.innerHTML = `
-                                 <p>Your cart is empty.</p>
-                             `;
-                         }
-             
-                         // Update total amount
-                         totalAmountContainer.textContent = calculateTotal();
-             
-                         // Save updated cart back to localStorage
-                         localStorage.setItem('cart', JSON.stringify(cart));
-                     }
-             
-                     // Increment quantity
-                     function incrementItem(index) {
-                         cart[index].quantity = (cart[index].quantity || 1) + 1;
-                         renderCart();
-                     }
-             
-                     // Decrement quantity
-                     function decrementItem(index) {
-                         if (cart[index].quantity > 1) {
-                             cart[index].quantity -= 1;
-                         } else {
-                             removeItem(index);
-                         }
-                         renderCart();
-                     }
-             
-                     // Remove item
-                     function removeItem(index) {
-                         cart.splice(index, 1);
-                         renderCart();
-                     }
-             
-                     // Add event listeners for action buttons
-                     cartItemsContainer.addEventListener('click', (event) => {
-                         const index = event.target.getAttribute('data-index');
-                         if (event.target.classList.contains('increment')) {
-                             incrementItem(index);
-                         } else if (event.target.classList.contains('decrement')) {
-                             decrementItem(index);
-                         } else if (event.target.classList.contains('remove')) {
-                             removeItem(index);
-                         }
-                     });
-             
-                     // Initial render
-                     renderCart();
-                 </script>
-             </body>
-             </html>
-              --> 
-              <!DOCTYPE html>
-              <html lang="en">
-              <head>
-                  <meta charset="UTF-8">
-                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Shopping Cart</title>
-                  <style>
-                      body {
-                          font-family: Arial, sans-serif;
-                          margin: 20px;
-                      }
-                      h1 {
-                          text-align: center;
-                      }
-                      .cart-container {
-                          display: flex;
-                          flex-direction: column;
-                          gap: 20px;
-                      }
-                      .cart-item {
-                          display: flex;
-                          align-items: center;
-                          border: 1px solid #ccc;
-                          border-radius: 8px;
-                          padding: 10px;
-                          gap: 15px;
-                          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                      }
-                      .cart-item img {
-                          width: 100px;
-                          height: 100px;
-                          object-fit: cover;
-                          border-radius: 8px;
-                      }
-                      .cart-details {
-                          flex: 1;
-                          display: flex;
-                          flex-direction: column;
-                      }
-                      .cart-details h3 {
-                          margin: 0;
-                      }
-                      .cart-details p {
-                          margin: 5px 0;
-                      }
-                      .actions {
-                          display: flex;
-                          gap: 10px;
-                          align-items: center;
-                      }
-                      .action-btn {
-                          padding: 5px 10px;
-                          cursor: pointer;
-                          border: none;
-                          color: white;
-                          border-radius: 4px;
-                      }
-                      .increment { background-color: green; }
-                      .decrement { background-color: orange; }
-                      .remove { background-color: red; }
-                      .total-container {
-                          margin-top: 20px;
-                          font-size: 18px;
-                          text-align: right;
-                      }
-                      .total-container strong {
-                          background-color: firebrick;
-                          width: auto;
-                          padding: 10px 20px;
-                          color: white;
-                          border-radius: 3px;
-                      }
-              
-                      /* Media Queries for Responsive Design */
-                      @media (max-width: 768px) {
-                          .cart-item {
-                              flex-direction: column;
-                              align-items: flex-start;
-                              gap: 10px;
-                          }
-                          .cart-item img {
-                              width: 80px;
-                              height: 80px;
-                          }
-                          .cart-details h3 {
-                              font-size: 16px;
-                          }
-                          .cart-details p {
-                              font-size: 14px;
-                          }
-                          .action-btn {
-                              font-size: 12px;
-                              padding: 4px 8px;
-                          }
-                      }
-              
-                      @media (max-width: 480px) {
-                          body {
-                              margin: 10px;
-                          }
-                          .cart-item {
-                              padding: 8px;
-                          }
-                          .cart-item img {
-                              width: 60px;
-                              height: 60px;
-                          }
-                          .cart-details h3 {
-                              font-size: 14px;
-                          }
-                          .cart-details p {
-                              font-size: 12px;
-                          }
-                          .actions {
-                              flex-direction: column;
-                              gap: 5px;
-                          }
-                          .action-btn {
-                              font-size: 10px;
-                              padding: 3px 6px;
-                          }
-                          .total-container {
-                              font-size: 16px;
-                          }
-                      }
-                  </style>
-              </head>
-              <body>
-                  <h1>Your Cart</h1>
-                  <div class="cart-container" id="cart-items">
-                      <!-- Cart items will be displayed here -->
-                  </div>
-                  <div class="total-container">
-                      <strong>Total Amount: Rs. <span id="total-amount">0</span></strong>
-                  </div>
-              
-                  <script>
-                      // Retrieve cart data from localStorage
-                      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-              
-                      // Reference to the cart container and total amount element
-                      const cartItemsContainer = document.getElementById('cart-items');
-                      const totalAmountContainer = document.getElementById('total-amount');
-              
-                      // Calculate total amount
-                      function calculateTotal() {
-                          return cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
-                      }
-              
-                      // Render the cart items
-                      function renderCart() {
-                          cartItemsContainer.innerHTML = ''; // Clear current items
-                          cart.forEach((cartItem, index) => {
-                              const { item, price, quantity = 1, image = ' ' } = cartItem; // Default image
-                              const cartItemDiv = document.createElement('div');
-                              cartItemDiv.classList.add('cart-item');
-              
-                              cartItemDiv.innerHTML = `
-                                  <img src="${image}" alt="${item}">
-                                  <div class="cart-details">
-                                      <h3>${item}</h3>
-                                      <p>Price: Rs. ${price}</p>
-                                      <p>Quantity: ${quantity}</p>
-                                  </div>
-                                  <div class="actions">
-                                      <button class="action-btn increment" data-index="${index}">+</button>
-                                      <button class="action-btn decrement" data-index="${index}">-</button>
-                                      <button class="action-btn remove" data-index="${index}">
-                                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLzkeKPJFeiwWvAh71njC0avxSLnA7se2x_Q&s" 
-                                               style="width:18px;height:18px;"> Remove
-                                      </button>
-                                  </div>
-                              `;
-                              cartItemsContainer.appendChild(cartItemDiv);
-                          });
-              
-                          // Display message if cart is empty
-                          if (cart.length === 0) {
-                              cartItemsContainer.innerHTML = `<p>Your cart is empty.</p>`;
-                          }
-              
-                          // Update total amount
-                          totalAmountContainer.textContent = calculateTotal();
-              
-                          // Save updated cart back to localStorage
-                          localStorage.setItem('cart', JSON.stringify(cart));
-                      }
-              
-                      // Increment quantity
-                      function incrementItem(index) {
-                          cart[index].quantity = (cart[index].quantity || 1) + 1;
-                          renderCart();
-                      }
-              
-                      // Decrement quantity
-                      function decrementItem(index) {
-                          if (cart[index].quantity > 1) {
-                              cart[index].quantity -= 1;
-                          } else {
-                              removeItem(index);
-                          }
-                          renderCart();
-                      }
-              
-                      // Remove item
-                      function removeItem(index) {
-                          cart.splice(index, 1);
-                          renderCart();
-                      }
-              
-                      // Add event listeners for action buttons
-                      cartItemsContainer.addEventListener('click', (event) => {
-                          const index = event.target.getAttribute('data-index');
-                          if (event.target.classList.contains('increment')) {
-                              incrementItem(index);
-                          } else if (event.target.classList.contains('decrement')) {
-                              decrementItem(index);
-                          } else if (event.target.classList.contains('remove')) {
-                              removeItem(index);
-                          }
-                      });
-              
-                      // Initial render
-                      renderCart();
-                  </script>
-              </body>
-              </html>
-              
+               <!DOCTYPE html>
+               <html lang="en">
+               <head>
+                   <meta charset="UTF-8">
+                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                   <title>Shopping Cart</title>
+                   <style>
+                       body {
+                           font-family: Arial, sans-serif;
+                           margin: 20px;
+                       }
+                       h1 {
+                           text-align: center;
+                       }
+                       .cart-container {
+                           display: flex;
+                           flex-direction: column;
+                           gap: 20px;
+                       }
+                       .cart-item {
+                           display: flex;
+                           align-items: center;
+                           border: 1px solid #ccc;
+                           border-radius: 8px;
+                           padding: 10px;
+                           gap: 15px;
+                           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                       }
+                       .cart-item img {
+                           width: 100px;
+                           height: 100px;
+                           object-fit: cover;
+                           border-radius: 8px;
+                       }
+                       .cart-details {
+                           flex: 1;
+                           display: flex;
+                           flex-direction: column;
+                       }
+                       .cart-details h3 {
+                           margin: 0;
+                       }
+                       .cart-details p {
+                           margin: 5px 0;
+                       }
+                       .actions {
+                           display: flex;
+                           gap: 10px;
+                           align-items: center;
+                       }
+                       .action-btn {
+                           padding: 5px 10px;
+                           cursor: pointer;
+                           border: none;
+                           color: white;
+                           border-radius: 4px;
+                       }
+                       .increment { background-color: green; }
+                       .decrement { background-color: orange; }
+                       .remove { background-color: red; }
+                       .total-container {
+                           margin-top: 20px;
+                           font-size: 18px;
+                           text-align: right;
+                       }
+                       .total-container strong {
+                           background-color: firebrick;
+                           width: auto;
+                           padding: 10px 20px;
+                           color: white;
+                           border-radius: 3px;
+                       }
+                   </style>
+               </head>
+               <body>
+                   <h1>Your Cart</h1>
+                   <div class="cart-container" id="cart-items">
+                       <!-- Cart items will be dynamically rendered here -->
+                   </div>
+                   <div class="total-container">
+                       <strong>Total Amount: Rs. <span id="total-amount">0</span></strong>
+                   </div>
+               
+                   <script>
+                       // Retrieve cart data from localStorage
+                       let cart = JSON.parse(localStorage.getItem('cart')) || [];
+               
+                       // Reference to the cart container and total amount element
+                       const cartItemsContainer = document.getElementById('cart-items');
+                       const totalAmountContainer = document.getElementById('total-amount');
+               
+                       // Calculate total amount
+                       function calculateTotal() {
+                           return cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+                       }
+               
+                       // Render the cart items
+                       function renderCart() {
+                           cartItemsContainer.innerHTML = ''; // Clear current items
+                           cart.forEach((cartItem, index) => {
+                               const { item, price, quantity = 1, image = '' } = cartItem;
+               
+                               // Cart Item Element
+                               const cartItemDiv = document.createElement('div');
+                               cartItemDiv.classList.add('cart-item');
+                               cartItemDiv.innerHTML = `
+                                   <img src="${image}" alt="${item}">
+                                   <div class="cart-details">
+                                       <h3>${item}</h3>
+                                       <p>Price: Rs. ${price}</p>
+                                       <p>Quantity: ${quantity}</p>
+                                   </div>
+                                   <div class="actions">
+                                       <button class="action-btn increment" data-index="${index}">+</button>
+                                       <button class="action-btn decrement" data-index="${index}">-</button>
+                                       <button class="action-btn remove" data-index="${index}">Remove</button>
+                                   </div>
+                               `;
+                               cartItemsContainer.appendChild(cartItemDiv);
+                           });
+               
+                           // Display message if cart is empty
+                           if (cart.length === 0) {
+                               cartItemsContainer.innerHTML = `<p>Your cart is empty.</p>`;
+                           }
+               
+                           // Update total amount
+                           totalAmountContainer.textContent = calculateTotal();
+               
+                           // Save updated cart back to localStorage
+                           localStorage.setItem('cart', JSON.stringify(cart));
+                       }
+               
+                       // Increment quantity
+                       function incrementItem(index) {
+                           cart[index].quantity = (cart[index].quantity || 1) + 1;
+                           renderCart();
+                       }
+               
+                       // Decrement quantity
+                       function decrementItem(index) {
+                           if (cart[index].quantity > 1) {
+                               cart[index].quantity -= 1;
+                           } else {
+                               removeItem(index);
+                           }
+                           renderCart();
+                       }
+               
+                       // Remove item
+                       function removeItem(index) {
+                           cart.splice(index, 1);
+                           renderCart();
+                       }
+               
+                       // Add event listeners for action buttons
+                       cartItemsContainer.addEventListener('click', (event) => {
+                           const button = event.target.closest('button'); // Detect the button regardless of nested elements
+                           if (!button) return;
+               
+                           const index = button.dataset.index;
+                           if (button.classList.contains('increment')) {
+                               incrementItem(index);
+                           } else if (button.classList.contains('decrement')) {
+                               decrementItem(index);
+                           } else if (button.classList.contains('remove')) {
+                               removeItem(index);
+                           }
+                       });
+               
+                       // Initial render
+                       renderCart();
+                   </script>
+               </body>
+               </html>
+               
