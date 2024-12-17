@@ -156,7 +156,7 @@
                         // Add a new item to the cart
                         function addItemToCart(newItem) {
                             // Always fetch the latest cart from localStorage to avoid stale data
-                            cart = JSON.parse(localStorage.getItem('cart')) || [];
+                            // cart = JSON.parse(localStorage.getItem('cart')) || [];
                 
                             // Check if the item already exists in the cart
                             const existingItemIndex = cart.findIndex((item) => item.item === newItem.item);
