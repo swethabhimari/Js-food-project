@@ -33,9 +33,10 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', () => {
         const item = button.getAttribute('data-item');
         const price = button.getAttribute('data-price');
+        const image=button.getAttribute('data-image')
 
         // Add item to the cart array
-        cart.push({ item, price });
+        cart.push({ item, price,image });
 
         // Save cart data to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
@@ -51,6 +52,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.getAttribute('data-item');
                 const price = button.getAttribute('data-price');
+                const image=button.getAttribute('data-image')
                 const confirmBuy = confirm(`Do you want to buy ${item} for Rs.${price}?`);
                 if (confirmBuy) {
                     alert(`You have purchased ${item}. Thank you!`);
