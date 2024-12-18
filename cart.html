@@ -210,10 +210,23 @@
 
     // Remove item
     function removeItem(index) {
-        cart.splice(index, 1); // Remove the item from the cart array
-        localStorage.setItem('cart', JSON.stringify(cart)); // Save the updated cart to localStorage
-        renderCart(); // Re-render the cart
-    }
+    // Convert index to a number if it's a string
+    index = parseInt(index, 10);
+    console.log('Removing item at index:', index); // Debugging
+
+    // Create a new array excluding the item at the given index
+    cart = cart.filter((_, i) => i !== index);
+    console.log('Updated cart:', cart); // Debugging
+
+    // Save the updated cart to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log('Saved cart to localStorage:', JSON.parse(localStorage.getItem('cart'))); // Debugging
+
+    // Re-render the cart
+    renderCart();
+}
+
+
 
     // Add event listeners for action buttons
     cartItemsContainer.addEventListener('click', (event) => {
