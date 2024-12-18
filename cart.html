@@ -142,95 +142,98 @@
                    </div>
                
                    <script>
-                       // Retrieve cart data from localStorage
-                       let cart = JSON.parse(localStorage.getItem('cart')) || [];
-               
-                       // Reference to the cart container and total amount element
-                       const cartItemsContainer = document.getElementById('cart-items');
-                       const totalAmountContainer = document.getElementById('total-amount');
-               
-                       // Calculate total amount
-                       function calculateTotal() {
-                           return cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
-                       }
-               
-                       // Render the cart items
-                       function renderCart() {
-                           cartItemsContainer.innerHTML = ''; // Clear current items
-                           cart.forEach((cartItem, index) => {
-                               const { item, price, quantity = 1, image = '' } = cartItem;
-               
-                               // Cart Item Element
-                               const cartItemDiv = document.createElement('div');
-                               cartItemDiv.classList.add('cart-item');
-                               cartItemDiv.innerHTML = `
-                                   <img src="${image}" alt="${item}">
-                                   <div class="cart-details">
-                                       <h3>${item}</h3>
-                                       <p>Price: Rs. ${price}</p>
-                                       <p>Quantity: ${quantity}</p>
-                                   </div>
-                                   <div class="actions">
-                                       <button class="action-btn increment" data-index="${index}">+</button>
-                                       <button class="action-btn decrement" data-index="${index}">-</button>
-                                       <button class="action-btn remove" data-index="${index}">Remove</button>
-                                   </div>
-                               `;
-                               cartItemsContainer.appendChild(cartItemDiv);
-                           });
-               
-                           // Display message if cart is empty
-                           if (cart.length === 0) {
-                               cartItemsContainer.innerHTML = `<p>Your cart is empty.</p>`;
-                           }
-               
-                           // Update total amount
-                           totalAmountContainer.textContent = calculateTotal();
-               
-                           // Save updated cart back to localStorage
-                           localStorage.setItem('cart', JSON.stringify(cart));
-                       }
-               
-                       // Increment quantity
-                       function incrementItem(index) {
-                           cart[index].quantity = (cart[index].quantity || 1) + 1;
-                           renderCart();
-                       }
-               
-                       // Decrement quantity
-                       function decrementItem(index) {
-                           if (cart[index].quantity > 1) {
-                               cart[index].quantity -= 1;
-                           } else {
-                               removeItem(index);
-                           }
-                           renderCart();
-                       }
+                       
+    // Retrieve cart data from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-               
-                       // Add event listeners for action buttons
-                       cartItemsContainer.addEventListener('click', (event) => {
-                           const button = event.target.closest('button');
-                           if (!button) return;
-               
-                           const index = button.dataset.index;
-                           if (button.classList.contains('increment')) {
-                               incrementItem(index);
-                           } else if (button.classList.contains('decrement')) {
-                               decrementItem(index);
-                           } else if (button.classList.contains('remove')) {
-                               removeItem(index);
-                           }
-                       });
-                       // Remove item
-                      
-               
-                       // Initial render
-                       renderCart();
-                       function removeItem(index) {
-                           cart.splice(index, 1);
-                           renderCart();
-                       }
+    // Reference to the cart container and total amount element
+    const cartItemsContainer = document.getElementById('cart-items');
+    const totalAmountContainer = document.getElementById('total-amount');
+
+    // Calculate total amount
+    function calculateTotal() {
+        return cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+    }
+
+    // Render the cart items
+    function renderCart() {
+        cartItemsContainer.innerHTML = ''; // Clear current items
+        cart.forEach((cartItem, index) => {
+            const { item, price, quantity = 1, image = '' } = cartItem;
+
+            // Cart Item Element
+            const cartItemDiv = document.createElement('div');
+            cartItemDiv.classList.add('cart-item');
+            cartItemDiv.innerHTML = `
+                <img src="${image}" alt="${item}">
+                <div class="cart-details">
+                    <h3>${item}</h3>
+                    <p>Price: Rs. ${price}</p>
+                    <p>Quantity: ${quantity}</p>
+                </div>
+                <div class="actions">
+                    <button class="action-btn increment" data-index="${index}">+</button>
+                    <button class="action-btn decrement" data-index="${index}">-</button>
+                    <button class="action-btn remove" data-index="${index}">Remove</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(cartItemDiv);
+        });
+
+        // Display message if cart is empty
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = `<p>Your cart is empty.</p>`;
+        }
+
+        // Update total amount
+        totalAmountContainer.textContent = calculateTotal();
+
+        // Save updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Increment quantity
+    function incrementItem(index) {
+        cart[index].quantity = (cart[index].quantity || 1) + 1;
+        renderCart();
+    }
+
+    // Decrement quantity
+    function decrementItem(index) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity -= 1;
+        } else {
+            removeItem(index);
+        }
+        renderCart();
+    }
+
+    // Remove item
+    function removeItem(index) {
+        cart.splice(index, 1); // Remove the item from the cart array
+        localStorage.setItem('cart', JSON.stringify(cart)); // Save the updated cart to localStorage
+        renderCart(); // Re-render the cart
+    }
+
+    // Add event listeners for action buttons
+    cartItemsContainer.addEventListener('click', (event) => {
+        const button = event.target.closest('button');
+        if (!button) return;
+
+        const index = button.dataset.index;
+        if (button.classList.contains('increment')) {
+            incrementItem(index);
+        } else if (button.classList.contains('decrement')) {
+            decrementItem(index);
+        } else if (button.classList.contains('remove')) {
+            removeItem(index);
+        }
+    });
+
+    // Initial render
+    renderCart();
+
+
                        
                    </script>
                </body>
