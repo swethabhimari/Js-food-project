@@ -206,12 +206,7 @@
                            }
                            renderCart();
                        }
-               
-                       // Remove item
-                       function removeItem(index) {
-                           cart.splice(index, 1);
-                           renderCart();
-                       }
+
                
                        // Add event listeners for action buttons
                        cartItemsContainer.addEventListener('click', (event) => {
@@ -227,6 +222,11 @@
                                removeItem(index);
                            }
                        });
+                       // Remove item
+                       function removeItem(index) {
+                           cart.splice(index, 1);
+                           renderCart();
+                       }
                
                        // Initial render
                        renderCart();
